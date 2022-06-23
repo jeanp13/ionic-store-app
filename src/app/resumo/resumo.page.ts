@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-resumo',
+  templateUrl: 'resumo.page.html',
+  styleUrls: ['resumo.page.scss'],
 })
 export class Tab1Page {
-
   constructor() {}
-
 }
