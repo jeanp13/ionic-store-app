@@ -1,23 +1,32 @@
 <ion-header>
-  <ion-toolbar color="primary" class="text-center">
-    <ion-title>Login</ion-title>
+  <ion-toolbar class="text-center">
+    <ion-title class="ion-text-center">Ógea Tecnologia</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label>Login</ion-label>
-      <ion-input inputmode="text" type="text" placeholder="Login"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Senha</ion-label>
-      <ion-input inputmode="text" type="password" placeholder="Senha"></ion-input>
-    </ion-item>
-    <div class="ion-padding">
+  <ion-list class="container">
+    <div>
+      <ion-img src="./../../assets/logo.svg" style="height: 200px;"></ion-img>
+    </div>
+    <div color="primary">
 
-      <ion-button (click)="login()" expand="block" fill="solid">
-        Entrar
-      </ion-button>
+      <div class="form">
+        <ion-input type="email" class="input_form" placeholder=" " [(ngModel)]="email"></ion-input>
+        <label for="email" class="label_form">E-mail</label>
+      </div>
+      <div class="form">
+        <ion-input type="password" class="input_form" placeholder=" " [(ngModel)]="password"></ion-input>
+        <label for="password" class="label_form">Senha</label>
+      </div>
+      <div class="ion-padding" style="width: 100%; max-width: 400px;">
+        <ion-button (click)="login()" expand="block" fill="solid" class="ion-padding">
+          Entrar
+        </ion-button>
+        <ion-button (click)="loginGoogle()" expand="block" fill="solid" class="ion-padding">
+          <ion-icon name="logo-google" class="ion-padding"></ion-icon>
+          Entrar com Google
+        </ion-button>
+      </div>
     </div>
   </ion-list>
 </ion-content>

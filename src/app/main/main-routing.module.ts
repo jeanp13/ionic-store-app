@@ -23,20 +23,25 @@ const routes: Routes = [
           import('../pedidos/pedidos.module').then((m) => m.Tab3PageModule),
       },
       {
-        path: 'venda',
+        path: 'vendas',
         loadChildren: () =>
-          import('../vendas/vendas.module').then((m) => m.Tab3PageModule),
+          import('../vendas/vendas.module').then((m) => m.Tab4PageModule),
+      },
+      {
+        path: 'perfil',
+        loadChildren: () =>
+          import('../perfil/perfil.module').then((m) => m.PerfilPageModule),
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/resumo/resumo',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/main/tab1',
+    redirectTo: '/main/main',
     pathMatch: 'full',
   },
 ];
