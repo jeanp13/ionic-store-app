@@ -7,6 +7,7 @@ import { Tab2Page } from './estoque.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './estoque-routing.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { Tab2PageRoutingModule } from './estoque-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [Tab2Page],
 })
-export class Tab2PageModule {}
+export class TabEstoqueModule {}

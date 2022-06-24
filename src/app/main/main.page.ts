@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Constants } from 'src/shared/constants';
 
 @Component({
   selector: 'app-main',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['main.page.scss'],
 })
 export class TabsPage {
-  constructor() {}
+  constructor(public router: Router) {
+    const token = sessionStorage.getItem(Constants.keyStore.token);
+    if (!token) {
+      this.router.navigateByUrl('/');
+    }
+  }
 }

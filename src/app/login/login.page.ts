@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+import { UserService } from 'src/services/user-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -10,21 +10,13 @@ export class LoginPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(public userService: UserService, public router: Router) {}
 
   ngOnInit() {}
 
   async login() {
-    const headers = {
-      'content-type': 'application/json',
-    };
-    const data = { email: this.email, password: this.password };
-    await this.http
-      .post(`${environment.url_api}/sessions`, data, { headers })
-      .toPromise()
-      .then((response: Response) => {
-        console.log(response.body);
-      });
+    this.userService.login(this.email, this.password);
+    this.router.navigateByUrl('/main/resumo');
   }
 
   loginGoogle() {}

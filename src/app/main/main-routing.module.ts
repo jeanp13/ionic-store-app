@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Constants } from 'src/shared/constants';
 import { TabsPage } from './main.page';
 
+const token = localStorage.getItem(Constants.keyStore.token);
 const routes: Routes = [
   {
     path: 'main',
@@ -10,22 +12,22 @@ const routes: Routes = [
       {
         path: 'resumo',
         loadChildren: () =>
-          import('../resumo/resumo.module').then((m) => m.Tab1PageModule),
+          import('../resumo/resumo.module').then((m) => m.TabResumoModule),
       },
       {
         path: 'estoque',
         loadChildren: () =>
-          import('../estoque/estoque.module').then((m) => m.Tab2PageModule),
+          import('../estoque/estoque.module').then((m) => m.TabEstoqueModule),
       },
       {
         path: 'pedidos',
         loadChildren: () =>
-          import('../pedidos/pedidos.module').then((m) => m.Tab3PageModule),
+          import('../pedidos/pedidos.module').then((m) => m.TabPedidosModule),
       },
       {
         path: 'vendas',
         loadChildren: () =>
-          import('../vendas/vendas.module').then((m) => m.Tab4PageModule),
+          import('../vendas/vendas.module').then((m) => m.TabVendasModule),
       },
       {
         path: 'perfil',
@@ -34,14 +36,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/resumo/resumo',
+        redirectTo: '/main/resumo',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/main/main',
+    redirectTo: token ? '/main/resumo' : '/login',
     pathMatch: 'full',
   },
 ];

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  align-items: center;
+  top: 10px
+}
+
+.user {
+  align-items: center;
+  justify-content: center;
+}
